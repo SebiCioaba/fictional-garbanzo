@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="count1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Counting</title>
+
+    <p>In these notes, the set of natural numbers <m>\N</m> is <m>\{1,2,\ldots
+        \}</m>. For <m>n\in \N</m>, denote 
+        <me>
+          [n]=\{1,\ldots,n\}.
+        </me>
+      </p>
+
+  <definition xml:id="def-perm">
+    <statement>
+      <p>
+        Let <m>n\in \N</m>. A permutation of <m>[n]</m> is a bijective function <m>\sigma:[n]\rightarrow [n]</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <theorem xml:id="thm-permutation">
+    <statement>
+      <p>
+        Let <m>n\in \N</m>. The number of permutations of <m>[n]</m> is <m>n!</m>.
+      </p>
+    </statement>
+  </theorem>
+  
+   
+  <definition xml:id="def-">
+    <statement>
+        <p>
+            The binomial coefficient <m>\binom{n}{k}</m> ("n choose k") is defined as the number of <m>k</m>-subsets 
+            of a set with <m>n</m> elements.
+        </p>
+    </statement>
+  </definition>
+
+  <theorem xml:id="thm-bincoeff">
+    <creator>Binomial Theorem</creator>
+    <idx><h>Binomial Theorem</h></idx>
+    <statement>
+      <p> For <m>n,k\in \N\cup \{0\}</m>,
+        <men xml:id="eqn-bincoeffform1">
+          \binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n(n-1)\ldots (n-k+1)}{k!}.
+        </men>
+      </p>
+    </statement>
+  </theorem>
+
+<p>When <m>a\in \R, k\in \N\cup\{0\}</m>, we extend the previous notation and define
+        <men xml:id="eqn-bincoeffform2">
+          \binom{a}{k}=\frac{a(a-1)\ldots (a-k+1)}{k!}.
+        </men>
+      </p>
+  
+  <theorem xml:id="thm-binomial">
+    <statement>
+        <p> For any <m>x,y\in \R</m> and <m>n\in \N</m>,
+            <men xml:id="eqn-binthm">
+                (x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^ky^{n-k}.
+                </men>
+            </p>
+    </statement>
+  </theorem>
+ 
+   
+<definition xml:id="def-weakcomposition">
+    <statement>
+      <p>
+        A weak <m>k</m>-composition of <m>n\in \N</m> is a collection of integers <m>a_1,\ldots,a_k</m> such 
+        that 
+        <men xml:id="eqn-kweakcomp">
+          a_1,\ldots,a_k\geq 0 \text{ and } a_1+\ldots +a_k=n.
+        </men> 
+      </p>
+    </statement>
+  </definition>
+
+
+
+  <definition xml:id="def-composition">
+    <statement>
+      <p>
+        A <m>k</m>-composition of <m>n\in \N</m> is a collection of integers <m>a_1,\ldots,a_k</m> such 
+        that 
+        <men xml:id="eqn-kcomp">
+          a_1,\ldots,a_k\geq 1 \text{ and } a_1+\ldots +a_k=n.
+        </men> 
+      </p>
+    </statement>
+  </definition>
+
+  <theorem xml:id="thm-kcomp">
+    <statement>
+      <ol>
+        <li>
+          <p>
+          The number of weak <m>k</m>-compositions of <m>n</m> is <m>\binom{n+k-1}{k-1}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+        The number of <m>k</m>-compositions of <m>n</m> is <m>\binom{n-1}{k-1}</m>.
+          </p>
+        </li>
+      </ol> 
+    </statement>
+  </theorem> 
+
+
+<definition xml:id="def-stirling1">
+  <statement>
+    <p>
+      Let <m>n,k\in \N\cup \{0\}</m>. 
+      <ol>
+        <li>
+          <p>
+          Denote by <m>c(n,k)</m> the number of permutations in <m>S_n</m> 
+      with exactly <m>k</m> cycles.
+          </p>
+        </li>
+        <li>
+          <p>
+            The Stirling number <m>s(n,k)</m> of the first kind is defined as
+            <men xml:id="eqn-stirling1">
+              s(n,k)=(-1)^{n-k}c(n,k).
+            </men>     
+          </p>
+        </li>
+      </ol>
+      
+    </p>
+  </statement>
+</definition>
+
+
+<theorem xml:id="thm-stirling1">
+  <statement>
+   <ol>
+    <li>
+      <p>
+        <men>c(n,k)=(n-1)c(n-1,k)+c(n-1,k-1).</men>
+      </p>
+    </li>
+    <li> <p> For any <m>x\in \R</m>
+        <men>\sum_{k=0}^{n}c(n,k)x^k=x(x+1)\ldots (x+n-1).</men>
+      </p>
+    </li>
+    <li> <p>For any <m>x\in \R</m>
+        <men>\sum_{k=0}^{n}s(n,k)x^k=x(x-1)\ldots (x-n+1).</men>
+      </p>
+    </li>
+   </ol>
+  </statement>
+</theorem>
+
+<definition xml:id="def-stirling2">
+  <statement>
+    <p>
+      Let <m>n,k\in \N\cup \{0\}</m>. 
+      <ol>
+        <li>
+          <p>
+            Denote by <m>P(n,k)</m> the set of all the partitions of <m>[n]</m> into exactly <m>k</m> parts.
+          </p>
+        </li>
+        <li>
+          <p>
+            Define the Stirling number of second kind <m>S(n,k)</m> as 
+            the number of all partitions of <m>[n]</m> into exactly <m>k</m> parts.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="thm-stirling2">
+  <statement>
+   <ol>
+    <li>
+      <p>
+        <men>S(n,k)=kS(n-1,k)+S(n-1,k-1).</men>
+      </p>
+    </li>
+    <li>
+      <p>
+        <men xml:id="eqn-stirling2">
+          \sum_{k=0}^{n}S(n,k)x(x-1)\ldots (x-k+1)=x^n.
+        </men>     
+      </p>
+    </li>
+    <li><p>For fixed <m>k</m></p>
+      <p>
+        <men xml:id="eqn-stirling2expgen">
+          \sum_{n\ge k}S(n,k)\frac{X^n}{n!}=\frac{(e^X-1)^k}{k!}.
+        </men>     
+      </p>
+    </li>
+   </ol>
+  </statement>
+</theorem>
+
+<theorem xml:id="thm-pie">
+  <statement>
+    <p>Let <m>A</m> and <m>A_1,\ldots, A_n</m> be finite sets. For <m>\emptyset \ne J\subseteq [n]</m>, denote 
+      <men xml:id="eqn-AJ">
+        A_J=\cap_{j\in J}A_J,
+      </men>
+      and <m>A_{\emptyset}=A</m>. Then
+      <men>
+      |A\setminus (A_1\cup \ldots \cup A_n)|=\sum_{J:J\subseteq [n]}(-1)^{|J|}|A_J|.
+      </men>
+    </p>
+  </statement>
+</theorem>
+
+<definition xml:id="def-derangement">
+  <statement>
+    <p>
+     Let <m>n\in \N</m>. A derangement of <m>[n]</m> is a permutation <m>\sigma:[n]\rightarrow [n]</m> such that 
+     <m>\sigma(a)\neq a</m>, for any <m>a\in [n]</m>.
+    </p>
+  </statement>
+</definition>
+
+<proposition xml:id="prop-derangement">
+  <statement>
+    <p>
+      If <m>n\in \N, n\geq 3</m>, then
+      <men xml:id="eqn-derangrecurrence">
+        d_n=n(d_{n-1}+d_{n-2}).
+      </men>    
+    </p>
+  </statement>
+</proposition>
+
+<theorem xml:id="thm-derangement">
+  <statement>
+    <p>
+      Let <m>n\in \N</m>. If <m>d_n</m> is the number of derangements of <m>[n]</m>, then 
+      <men xml:id="eqn-derangement">
+        d_n=n!\sum_{j=0}^{n}\frac{(-1)^j}{j!}\approx \frac{n!}{e}.
+      </men>    
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="thm-stirling2formula">
+  <statement>
+    <p>
+      If <m>n,k\in \N\cup \{0\}</m>, then 
+      <men xml:id="eqn-stirling2formula">
+        k!S(n,k)=\sum_{j=0}^{k}(-1)^{j}\binom{k}{j}(k-j)^n.
+      </men>  
+    </p>
+  </statement>
+</theorem>
+
+<definition xml:id="def-Eulerphi">
+  <statement>
+    <p>
+      The Euler totient function<m>\varphi</m> is defined as <m>\varphi:\N\rightarrow \N</m>, where <m>\varphi(n)</m> equals
+      the number of natural numbers <m>k\in [n]</m> that are coprime with <m>n</m>.
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="thm-eulerphi">
+  <statement>
+    <p>
+      If <m>n\in \N, n\geq 2 </m> has the prime decomposition <m>n=p_1^{e_1}\ldots p_k^{e_k}</m>, where <m>k\ge 1, e_1,\ldots, e_k\ge 1</m>
+      and <m>p_1,\ldots,p_k</m> are distinct primes, then 
+      <men xml:id="eqn-eulerphi">
+        \varphi(n)=n\left(1-\frac{1}{p_1}\right)\ldots \left(1-\frac{1}{p_k}\right).
+      </men>   
+    </p>
+  </statement>
+</theorem>
+
+<definition xml:id="def-classicalmobius">
+  <statement>
+    <p>
+      The classical Mobius function <m>\mu</m> is defined as <m>\mu:\N\rightarrow \{-1,0,1\}</m>, where <m>\mu(1)=1</m>, 
+      <m>\mu(n)=0</m> if <m>n\geq 2</m> is divisible by the square of a prime, and <m>\mu(n)=(-1)^k</m>, if <m>n</m> 
+      is the product of <m>k</m> distinct primes.
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="thm-mobius1">
+  <statement>
+    <p>
+      If <m>n\in \N, n\geq 2</m>, then 
+      <men xml:id="eqn-mobius1">
+        \sum_{d:d\mid n}\mu(d)=0.
+      </men>
+      </p>
+  </statement>
+</theorem>
+
+
+<theorem xml:id="thm-mobiusinversion">
+  <statement>
+    <p>
+      Let <m>f,g:\N\rightarrow \R</m> be two functions. The following two statements are equivalent
+      <men xml:id="eqn-fgmobiusinversion">
+        (\forall n\in \N)(f(n)=\sum_{d:d\mid n}g(d)),
+      </men>
+      and 
+       <men xml:id="eqn-gfmobiusinversion">
+        (\forall n\in \N)(g(n)=\sum_{d:d\mid n}\mu(d)f(n/d)),
+      </men>
+    </p>
+  </statement>
+</theorem>
+
+
+<theorem xml:id="thm-irredpolycount">
+    <statement>
+        <p>
+            For a natural number <m>n</m> and a prime power <m>q</m>, let <m>N(n,q)</m> denote the number of monic irreducible
+            polynomials of degree <m>n</m> in <m>\mathbb{F}_q[X]</m>. Then
+             <men xml:id="eqn-irredpolynq">
+        N(n,q)=\frac{1}{2}\sum_{d:d\mid n}\mu\left(n/d\right)q^d.
+      </men>
+        </p>
+    </statement>
+</theorem>
+
+
+<definition xml:id="def-catalannumber">
+  <statement>
+    <p>
+      Let <m>n\in \N</m>. The Catalan number <m>C_n</m> is defined as the number of non-crossing 
+      triangulations of a convex <m>(n+2)</m>-gon using <m>n-1</m> diagonals.
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="thm-catalanrecurrence">
+  <statement>
+    <p>
+      For any <m>n\in \N</m>, 
+      <men xml:id="eqn-catalanrecurrence">
+        C_{n+1}=\sum_{k=0}^{n}C_kC_{n-k}.
+      </men>  
+    </p>
+  </statement>
+</theorem>
+
+<theorem xml:id="thm-catalannumberformula">
+  <statement>
+    <p>
+      For <m>n\in \N</m>,
+      <men xml:id="eqn-catalannumberformula">
+        C_n=\frac{\binom{2n-2}{n-1}}{n}.
+      </men>
+    </p>
+  </statement>
+</theorem>
+
+
+
+<definition xml:id="def-partition">
+  <statement>
+    <p>
+      For <m>n\in \N</m>, let <m>p(n)</m> denote the number of ways of writing <m>n</m> 
+      as the sum of natural numbers (order not important),
+      <men xml:id="eqn-partitionnumber">
+        p(n)=|\{(i_1,i_2,i_3,\ldots): n=i_1+2i_2+3i_3+\ldots \}|.
+      </men>
+    </p>
+    For convenience, define <m>p(0)=1</m>.
+  </statement>
+</definition>
+
+<theorem xml:id="thm-partitiongenfunc">
+  <statement>
+    <p>
+      The generating function of <m>(p(n))_{n\geq 0}</m> is
+      <men xml:id="eqn-partitiongenfunc">
+        \sum_{n=0}^{\infty}p(n)X^n=\prod_{j=1}^{\infty}(1+X^j+X^{2j}+X^{3j}+\ldots)=\prod_{j=1}^{\infty}(1-X^j)^{-1}.
+      </men>
+    </p>
+  </statement>
+</theorem>
+
+<definition xml:id="def-partitionunequal">
+  <statement>
+    <p>
+      For <m>n\in \N\cup \{0\}</m>, denote by <m>u(n)</m> the number of partitions of <m>n</m> into unequal parts.
+    </p>
+  </statement>
+</definition>
+
+<definition xml:id="def-partitionodd">
+  <statement>
+    <p>
+      For <m>n\in \N\cup \{0\}</m>, denote by <m>o(n)</m> the number of partitions of <m>n</m> into odd parts.
+    </p>
+  </statement>
+</definition>
+
+<theorem xml:id="thm-oddunequalpartition">
+  <statement>
+    <p>
+      <ol>
+        <li>
+          <p>
+            The generating function of <m>(u(n))_{n\ge 0}</m> is
+            <men xml:id="eqn-genfuncun">
+              \sum_{n=0}^{\infty}u(n)X^n=\prod_{j=1}^{\infty}(1+X^j).
+            </men>
+          </p>
+        </li>
+
+         <li>
+          <p>
+            The generating function of <m>(o(n))_{n\ge 0}</m> is
+            <men xml:id="eqn-genfuncon">
+              \sum_{n=0}^{\infty}o(n)X^{n}=\prod_{j=1}^{\infty}(1-X^{2j-1})^{-1}.
+            </men>
+          </p>
+        </li>
+        <li>
+          <p>
+            For any <m>n\in \N</m>, 
+            <men xml:id="eqn-unon">
+              u(n)=o(n).
+            </men>        
+          </p>
+        </li>
+       
+      </ol>
+    </p>
+  </statement>
+</theorem>
+
+
+</section>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-counting" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Counting Theorems</title>
+
+  <definition xml:id="def-">
+    <statement>
+        <p>
+            The binomial coefficient <m>\binom{n}{k}</m> ("n choose k") is defined as the number of <m>k</m>-subsets 
+            of a set with <m>n</m> elements.
+        </p>
+    </statement>
+  </definition>
+
+  <theorem xml:id="thm-bincoeff">
+    <statement>
+      <p>
+        <men xml:id="eqn-bincoeffform">
+          \binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n(n-1)\ldots (n-k+1)}{k!}.
+        </men>
+      </p>
+    </statement>
+  </theorem>
+  
+  <theorem xml:id="thm-binomial">
+    <statement>
+        <p>
+            <men xml:id="eqn-binthm">
+                (x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^ky^{n-k}.
+                </men>
+            </p>
+    </statement>
+  </theorem>
+
+  <definition xml:id="def-composition">
+    <statement>
+      <p>
+        A <m>k</m>-composition of <m>n\in \N</m> is a <m>k</m>-tuple <m>(a_1,\ldots,a_k)</m> such that 
+        <men xml:id="eqn-kcomp">
+          a_1+\ldots +a_k=n.
+        </men> 
+      </p>
+    </statement>
+  </definition>
+
+  <theorem xml:id="thm-kcomp">
+    <statement>
+      <p>
+        The number of <m>k</m>-compositions of <m>n</m> is <m>\binom{n-1}{k-1}</m>.
+      </p>
+    </statement>
+  </theorem>
+  
+
+  
+
+
+</chapter>

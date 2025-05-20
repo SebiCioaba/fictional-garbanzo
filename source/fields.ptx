@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Fields</title>
+
+   <definition xml:id="def-field">
+    <statement>
+        <p>
+            A field 
+        </p>
+    </statement>
+   </definition>
+
+   <theorem xml:id="thm-finitefield">
+    <statement>
+        <p>
+        If <m>\mathbb{F}</m> is a finite field with characteristic <m>p</m>, then
+        <ol>
+            <li>
+                <p>
+                    <m>p</m> is a prime.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>|\mathbb{F}|=p^k</m>, for some <m>k\in \N</m>.
+                </p>
+            </li>
+        </ol>
+        </p>
+    </statement>
+   </theorem>
+   
+
+</section>
