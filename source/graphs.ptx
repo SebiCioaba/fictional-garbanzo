@@ -3,6 +3,7 @@
 
     <p>In these notes, the set of natural numbers <m>\N</m> is <m>\{1,2,\ldots
         ,\}</m>.</p>
+    <p>We use <m>\Gamma=(V,E)</m> to denote a graph <m>\Gamma</m> with the vertex set <m>V</m> and the edge set <m>E</m>.</p>
    
 
 
